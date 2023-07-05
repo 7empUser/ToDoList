@@ -10,7 +10,7 @@
 
         <?php
             session_start();
-            if ($_SESSION["onSystem"] == "on" or isset($_POST["onSystem"])) {
+            if ($_SESSION["onSystem"] == "on") {
                 $_SESSION["onSystem"] = "on";
                 include_once("headerWithReg.php");
             } else {

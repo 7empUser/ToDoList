@@ -32,7 +32,8 @@
         if ($res === FALSE) {
             echo($link->errno." ".$link->error);
         } else {
-            echo("Зарегистрировано. Пожалуйста, авторизуйтесь");
+            echo("Вы зарегистрировались. Пожалуйста, авторизуйтесь");
+            $_SESSION["login"] = $login;
         }
     } elseif (isset($_POST["reg"]) and $loginCoincidence) {
         echo("Этот логин уже используется");
@@ -40,9 +41,12 @@
         echo("Этот Email Уже используется");
     } elseif (isset($_POST["signIn"]) and $loginCoincidence and $passCoincidence) {
         $_SESSION["onSystem"] = "on";
+        $_SESSION["login"] = $login;
         header("Location: ../pages/profile.php");
     } elseif (isset($_POST["signIn"]) and $loginCoincidence) {
         echo("Неверный пароль");
+    } elseif (isset($_POST["signIn"])) {
+        echo("Пожалуйста, зарегистрируйтесь");
     }
 
 ?>

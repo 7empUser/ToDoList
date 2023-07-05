@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>+RECORD</title>
     </head>
     <body>
@@ -17,6 +17,7 @@
                 include_once("pages/headerNoReg.php");
             }
         ?>
+        <h2>Главная</h2>
 
     </body>
 </html>

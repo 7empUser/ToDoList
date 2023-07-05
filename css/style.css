@@ -1,3 +1,5 @@
+/* Header */
+
 .btn {
     margin: auto;
     display: flex;
@@ -8,7 +10,6 @@
     align-items: center;
     justify-content: center;
     color: white;
-    
 }
 body {
     padding: 0;
@@ -32,4 +33,24 @@ h1 {
 }
 .secondInHeader {
     grid-column: 28 / 32;
+}
+
+/* For all */
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Profile */
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.records {
+    grid-column: 1 / 3;
+}
+.addNewRecord {
+    grid-column: 3 / 4;
 }
