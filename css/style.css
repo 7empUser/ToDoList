@@ -1,6 +1,35 @@
-.button {
-    display: inline-block;
-    width: 100px;
-    height: 40px;
+.btn {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: 60%;
     border: 1px solid black;
+    background-color: #7D1EFA;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+}
+body {
+    padding: 0;
+}
+header {
+    display: grid;
+    grid-template-columns: repeat(33, 1fr);
+    background-color: #FAA637;
+    height: 70px;
+}
+h1 {
+    margin: 0;
+    font-size: 40px;
+}
+.headerH1 {
+    grid-column: 6 / 11;
+    margin: auto;
+}
+.firstInHeader {
+    grid-column: 22 / 26;
+}
+.secondInHeader {
+    grid-column: 28 / 32;
 }
