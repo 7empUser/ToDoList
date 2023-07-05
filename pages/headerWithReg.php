@@ -1,5 +1,5 @@
 <header>
-    <a href="http://diplomtop/index.php" class="headerH1">
+    <a href="http://todolist/index.php" class="headerH1">
         <div>
             <h1>+RECORD</h1>
         </div>

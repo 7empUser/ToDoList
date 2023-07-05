@@ -3,9 +3,8 @@
     if (!$link) {
         die ("Error: ".$link->error());
     }
-    if (isset($_POST["reg"])) {
+    if (!isset($_POST["newRecord"])) {
         include_once("checkDBExist.php");
-    } elseif (isset($_POST["newRecord"])) {
-
+        include_once("searchUser.php");
     }
 ?>

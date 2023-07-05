@@ -4,5 +4,4 @@
     $link->select_db("ToDoList");
     $checkTable = "CREATE TABLE IF NOT EXISTS users";
     $link->query($checkTable);
-    include_once("newUser.php");
 ?>
