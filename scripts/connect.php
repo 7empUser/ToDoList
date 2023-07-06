@@ -11,6 +11,9 @@
         include_once("addNewRecord.php");
     } elseif (isset($_POST["showRecords"])) {
         $login = $_SESSION["login"];
+        if (isset($_POST["complete"])) {
+            include_once("editRecord.php");
+        }
         include_once ("outputRecords.php");
     }
 ?>
