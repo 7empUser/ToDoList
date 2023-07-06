@@ -38,9 +38,9 @@
                 <form action="profile.php" method="POST">
                     <h3>Добавить заметку</h3>
                     <label>Заголовок: </label>
-                    <input type="text" name="header"></br>
+                    <input type="text" name="header" maxlength="250"></br>
                     <label>Заметка: </label>
-                    <textarea name="record" cols="30" rows="10"></textarea></br>
+                    <textarea name="record" cols="30" rows="10" maxlength="65000"></textarea></br>
                     <input type="submit" name="newRecord">
                 </form>
             </div>

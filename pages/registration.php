@@ -23,9 +23,9 @@
         <div class="divRegForm">
                 <form action="registration.php" method="POST">
                     <label>Логин:</label>
-                    <input type="text" name="login">
+                    <input type="text" name="login" maxlength="25">
                     <label>Email:</label>
-                    <input type="email" name="email">
+                    <input type="email" name="email" maxlength="250">
                     <label>Пароль:</label>
                     <input type="password" name="pass">
                     <label>Повторите пароль:</label>

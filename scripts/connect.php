@@ -5,7 +5,7 @@
     }
     include_once("checkDBExist.php");
     if (isset($_POST["reg"]) or isset($_POST["signIn"])) {
-        include_once("searchUser.php");
+        include_once("searchAndCheckUser.php");
     } elseif (isset($_POST["newRecord"])) {
         $login = $_SESSION["login"];
         include_once("addNewRecord.php");

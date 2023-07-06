@@ -1,8 +1,26 @@
 <?php
+
     $login = trim($_POST["login"]);
     $email = trim($_POST["email"]);
-    $pass = md5(trim($_POST["pass"]));
+    $pass = trim($_POST["pass"]);
+    $checkPass = trim($_POST["checkPass"]);
 
+    // Check Registration Form
+    if (isset($_POST["reg"])) {
+        $emailCheckReg = "/\w+@\w+\.\w+/";
+    
+        if (strlen($login) < 5 or strlen($login) > 25) {
+            die ("Логин не подходит по длине. Используйте от 5 до 25 символов");
+        } elseif (!preg_match($emailCheckReg, $email)) {
+            die ("Email не того формата");
+        } elseif (strlen($pass) < 8) {
+            die ("Пароль меньше 8 символов");
+        } elseif ($pass != $checkPass) {
+            die ("Пароли не совпадают");
+        }
+    }
+
+    $pass = md5($pass);
     $searchUserSql = "SELECT * FROM users";
     $data = $link->query($searchUserSql);
     $loginCoincidence = FALSE;
@@ -33,6 +51,7 @@
             echo($link->errno." ".$link->error);
         } else {
             echo("Вы зарегистрировались. Пожалуйста, авторизуйтесь");
+            echo("$login $email $pass");
             $_SESSION["login"] = $login;
         }
     } elseif (isset($_POST["reg"]) and $loginCoincidence) {
@@ -44,6 +63,7 @@
         $_SESSION["login"] = $login;
         header("Location: ../pages/profile.php");
     } elseif (isset($_POST["signIn"]) and $loginCoincidence) {
+        echo ("$login $pass");
         echo("Неверный пароль");
     } elseif (isset($_POST["signIn"])) {
         echo("Пожалуйста, зарегистрируйтесь");
