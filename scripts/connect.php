@@ -13,6 +13,8 @@
         $login = $_SESSION["login"];
         if (isset($_POST["complete"])) {
             include_once("editRecord.php");
+        } elseif (isset($_POST["deleteYes"])) {
+            include_once("deleteRecord.php");
         }
         include_once ("outputRecords.php");
     }

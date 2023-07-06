@@ -15,16 +15,20 @@
                     echo ("<input type='hidden' name='hiddenId' value='$id'></br>");
                     echo ("<input type='submit' name='complete' value='Готово'>");
                 echo("</form>");
-                print_r($_POST);
-            } elseif (isset($_POST["delete"]) and $_POST["id"] == $id) {
-
-            } else {
-                echo ("<h4>$header</h4><p>$record $id</p>")
+            }  else {
+                echo ("<h4>$header</h4><p>$record</p>");
+                if (isset($_POST["delete"]) and $_POST["hiddenId"] == $id) {
+                    echo ("<form action='../pages/profile.php' method='POST'>");
+                        echo ("<input type='submit' name='deleteYes' value='Вы уверены?'>");
+                        echo ("<input type='hidden' name='hiddenId' value='$id'");
+                    echo ("</form>");
+                } else {
 ?>
                 <form action="../pages/profile.php" method="POST">
                     <input type="submit" name="edit" value="Изменить">
                     <input type="submit" name="delete" value="Удалить">
 <?php
+                }
                     echo ("<input type='hidden' name='hiddenId' value='$id'>");
                 echo ("</form>");
             }
