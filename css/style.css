@@ -48,9 +48,25 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
-.records {
-    grid-column: 1 / 3;
-}
 .addNewRecord {
     grid-column: 3 / 4;
+}
+.recordsTable {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5%;
+    row-gap: 10px;
+    padding: 10px 10% 10px 10%;
+}
+.recordsTable>h3 {
+    grid-column: 1 / 3;
+    text-align: center;
+}
+.record {
+    border: 1px solid black;
+    padding: 10px;
+}
+.record>h4 {
+    text-align: center;
 }

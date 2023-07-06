@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         <title>Document</title>
     </head>
     <body>
@@ -23,11 +23,20 @@
         ?>
         <h2>Личный кабинет</h2>
         <div class="content">
-            <div class="records">
-                
-            </div>
+            <div class="recordsTable">
+                <h3>Текущие заметки</h3>
+        
+        <?php
+        
+            $_POST["showRecords"] = "";
+            include_once("../scripts/connect.php");
+
+        ?>
+        
+        </div>
             <div class="addNewRecord">
                 <form action="profile.php" method="POST">
+                    <h3>Добавить заметку</h3>
                     <label>Заголовок: </label>
                     <input type="text" name="header"></br>
                     <label>Заметка: </label>

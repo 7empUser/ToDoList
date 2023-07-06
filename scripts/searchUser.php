@@ -12,7 +12,7 @@
         $userLogin = $user["Login"];
         $userEmail = $user["Email"];
         $userPass = $user["Password"];
-        if ($login == $userLogin) {
+        if ($login == $userLogin or $login == "users") {
             $loginCoincidence = TRUE;
         }
         if ($email == $userEmail) {
