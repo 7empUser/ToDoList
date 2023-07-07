@@ -1,3 +1,3 @@
-The sistem part is finished. Design and content will be later.
+The sistem part is finished. Starting to do design and content. 
 
-Системная часть была закончена. Дизайн и наполнение будут позже.
+Системная часть была закончена. Начинаю делать дизайн и наполнение.

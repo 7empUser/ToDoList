@@ -17,6 +17,7 @@
                 include_once("headerNoReg.php");
             }
 
+            include_once("../scripts/connect.php");
             if (isset($_POST["newRecord"])) {
                 include_once("../scripts/connect.php");
             }
@@ -47,11 +48,15 @@
         
         <?php
 
-            echo("<h4>Группа ".$_SESSION["group"]."</h4>");
+            echo ("<h4>Группа ".$_SESSION["group"]."</h4>");
             $_POST["showRecords"] = "";
             include_once("../scripts/connect.php");
 
         ?>
+
+            <form action="profile.php" method="POST" class="deleteGroup">
+                <input type="submit" name="deleteGroup" value="Очистить группу">
+            </form>
         
         </div>
             <div class="addNewRecord">

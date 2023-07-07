@@ -17,9 +17,9 @@
     } elseif (isset($_POST["showRecords"])) {
         if (isset($_POST["complete"])) {
             include_once("editRecord.php");
-        } elseif (isset($_POST["deleteYes"])) {
-            include_once("deleteRecord.php");
-        }
+        } elseif (isset($_POST["deleteGroup"]) or isset($_POST["delete"])) {
+            include_once("delete.php");
+        } 
         include_once ("outputRecords.php");
     }
 ?>
