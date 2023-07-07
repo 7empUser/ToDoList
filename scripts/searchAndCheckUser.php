@@ -45,15 +45,21 @@
     }
 
     if (isset($_POST["reg"]) and !$loginCoincidence and !$emailCoincidence) {
-        $insertUser = "INSERT INTO `users`(`Login`, `Email`, `Password`) VALUES ('$login', '$email', '$pass')";
+        $insertUser = "INSERT INTO `users`(`Login`, `Email`, `Password`, `CountGroups`) VALUES ('$login', '$email', '$pass', 1)";
         $res = $link->query($insertUser);
         if ($res === FALSE) {
             echo($link->errno." ".$link->error);
         } else {
             echo("Вы зарегистрировались. Пожалуйста, авторизуйтесь");
-            echo("$login $email $pass");
             $_SESSION["login"] = $login;
         }
+        $newRecordDB = "CREATE TABLE IF NOT EXISTS `$login`(id int PRIMARY KEY NOT NULL AUTO_INCREMENT, 
+            Header tinytext NOT NULL,
+            Record text NOT NULL,
+            GroupId tinyint NOT NULL)";
+        $link->query($newRecordDB);
+        $_SESSION["countGroups"] = 1;
+        $_SESSION["sql"] = $link->errno." | ".$link->error;
     } elseif (isset($_POST["reg"]) and $loginCoincidence) {
         echo("Этот логин уже используется");
     } elseif (isset($_POST["reg"]) and $emailCoincidence) {
@@ -61,6 +67,7 @@
     } elseif (isset($_POST["signIn"]) and $loginCoincidence and $passCoincidence) {
         $_SESSION["onSystem"] = "on";
         $_SESSION["login"] = $login;
+        $_SESSION["group"] = 1;
         header("Location: ../pages/profile.php");
     } elseif (isset($_POST["signIn"]) and $loginCoincidence) {
         echo ("$login $pass");
