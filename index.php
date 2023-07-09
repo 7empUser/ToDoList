@@ -17,7 +17,9 @@
                 include_once("pages/headerNoReg.php");
             }
         ?>
-        <h2>Главная</h2>
+        <div class="mainPage">
+            <h2>Главная</h2>
+        </div>
 
     </body>
 </html>

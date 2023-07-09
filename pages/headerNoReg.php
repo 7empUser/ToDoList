@@ -4,10 +4,10 @@
             <h1>+RECORD</h1>
         </div>
     </a>
-    <a href="http://todolist/pages/signIn.php" class="btn firstInHeader">
+    <a href="http://todolist/pages/signIn.php" class="headerBtn firstInHeader">
         <div><p>Вход</p></div>
     </a>
-    <a href="http://todolist/pages/registration.php" class="btn secondInHeader">
+    <a href="http://todolist/pages/registration.php" class="headerBtn secondInHeader">
         <div><p>Регистрация</p></div>
     </a>
 </header>
