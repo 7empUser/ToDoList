@@ -5,9 +5,9 @@
         </div>
     </a>
     <a href="http://ToDoList/pages/profile.php" class="headerBtn firstInHeader">
-        <div><p>Личный кабинет</p></div>
+        <div><p class="text">Личный кабинет</p></div>
     </a>
     <a href="http://ToDoList/pages/exit.php" class="headerBtn secondInHeader">
-        <div><p>Выйти</p></div>
+        <div><p class="text">Выйти</p></div>
     </a>
 </header>

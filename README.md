@@ -1,3 +1,3 @@
-The sistem part is finished. Starting to do design and content. 
+The sistem part and design is finished, however design could do better.
 
-Системная часть была закончена. Начинаю делать дизайн и наполнение.
+Системная часть И дизайн была закончена, хотя дизайн можно сделать куда лучше.

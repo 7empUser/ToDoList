@@ -17,7 +17,6 @@
                 include_once("headerNoReg.php");
             }
 
-            include_once("../scripts/connect.php");
             if (isset($_POST["newRecord"])) {
                 include_once("../scripts/connect.php");
             }
@@ -29,44 +28,51 @@
             }
 
         ?>
-        <h2>Личный кабинет</h2>
+
+        <div class="profileH2">
+            <h2>Личный кабинет</h2>
+        </div>
         <div class="content">
-            <div class="recordGroups">
-                <form action="profile.php" method="POST">
-        <?php
-            for ($i = 1; $i <= $_SESSION["countGroups"]; $i++) {
-                echo ("<input type='submit' name='group' value='$i'>");
-            }
-            if ($_SESSION["countGroups"] < 5) {
-                echo ("<input type='submit' name='newGroup' value='Новая группа'>");
-            }
-        ?> 
-                </form>
-            </div>
             <div class="recordsTable">
                 <h3>Текущие заметки</h3>
-        
-        <?php
+                <div class="recordGroups">
+                    <form action="profile.php" method="POST">
+            <?php
 
-            echo ("<h4>Группа ".$_SESSION["group"]."</h4>");
-            $_POST["showRecords"] = "";
-            include_once("../scripts/connect.php");
+                for ($i = 1; $i <= $_SESSION["countGroups"]; $i++) {
+                    echo ("<input type='submit' name='group' value='$i' class='groupStyle'>");
+                }
+                if ($_SESSION["countGroups"] < 5) {
+                    echo ("<input type='submit' name='newGroup' value='Новая группа' class='newGroupStyle'>");
+                }
 
-        ?>
+            ?> 
+                    </form>
+                </div>
+                <div class="recordOutput">
+                <?php
 
-            <form action="profile.php" method="POST" class="deleteGroup">
-                <input type="submit" name="deleteGroup" value="Очистить группу">
-            </form>
-        
-        </div>
+                    echo ("<h4>Группа ".$_SESSION["group"]."</h4>");
+                    $_POST["show"] = "";
+                    include_once("../scripts/connect.php");
+
+                ?>
+                    <form action="profile.php" method="POST" class="deleteGroup">
+                        <input type="submit" name="deleteGroup" value="Очистить группу">
+                    </form>
+                </div>
+            </div>
+
             <div class="addNewRecord">
+                <h3>Добавить заметку</h3>
                 <form action="profile.php" method="POST">
-                    <h3>Добавить заметку</h3>
-                    <label>Заголовок: </label>
-                    <input type="text" name="header" maxlength="250"></br>
-                    <label>Заметка: </label>
-                    <textarea name="record" cols="30" rows="10" maxlength="65000"></textarea></br>
-                    <input type="submit" name="newRecord">
+                    <label>Заголовок<br>
+                        <input type="text" name="header" maxlength="250" class="btnInput"></br>
+                    </label>
+                    <label>Заметка<br>
+                        <textarea name="record" cols="30" rows="10" maxlength="65000" class="btnInput"></textarea></br>
+                    </label>
+                    <input type="submit" name="newRecord" class="btnInput">
                 </form>
             </div>
         </div>

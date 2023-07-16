@@ -11,7 +11,6 @@
         <?php
             session_start();
             if ($_SESSION["onSystem"] == "on") {
-                $_SESSION["onSystem"] = "on";
                 include_once("pages/headerWithReg.php");
             } else {
                 include_once("pages/headerNoReg.php");

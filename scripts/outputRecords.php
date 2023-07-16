@@ -3,7 +3,8 @@
     if ($link->query($checkRecordSql) !== FALSE) {
         $readSql = "SELECT * FROM `$login`";
         $result = $link->query($readSql);
-        foreach ($result as $row) {
+        $column = 1;
+        while ($row = $result->fetch_array()) {
             $id = $row["id"];
             $header = $row["Header"];
             $record = $row["Record"];

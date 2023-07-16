@@ -20,13 +20,17 @@
             if (!isset($_POST["signIn"])) {
         ?>
 
-        <form action="signIn.php" method="POST">
-            <label>Логин: </label>
-            <input type="text" name="login">
-            <label>Пароль: </label>
-            <input type="password" name="pass">
-            <input type="submit" value="Войти" name="signIn">
-        </form>
+        <div class="divSignInForm">
+            <form action="signIn.php" method="POST">
+                <label>Логин<br>
+                    <input type="text" name="login" class="btnInput" required><span></span>
+                </label>
+                <label>Пароль<br>
+                    <input type="password" name="pass" class="btnInput" required><span></span>
+                </label>
+                <input type="submit" value="Войти" name="signIn" class="btnInput">
+            </form>
+        </div>
 
         <?php
             } else {
